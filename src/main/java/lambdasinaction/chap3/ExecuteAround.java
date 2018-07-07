@@ -13,21 +13,21 @@ public class ExecuteAround {
 
 		System.out.println("---");
 
-		String oneLine = processFile((BufferedReader b) -> b.readLine());
+		String oneLine = processFile((BufferedReader b) -> b.readLine()); // one line
 		System.out.println(oneLine);
 
-		String twoLines = processFile((BufferedReader b) -> b.readLine() + b.readLine());
+		String twoLines = processFile((BufferedReader b) -> b.readLine() + b.readLine()); // two lines
 		System.out.println(twoLines);
 	}
 
 	public static String processFileLimited() throws IOException {
-		try (BufferedReader br = new BufferedReader(new FileReader("lambdasinaction/chap3/data.txt"))) {
+		try (BufferedReader br = new BufferedReader(new FileReader("C:/Windows/System32/drivers/etc/hosts"))) {
 			return br.readLine();
 		}
 	}
 
 	public static String processFile(BufferedReaderProcessor p) throws IOException {
-		try (BufferedReader br = new BufferedReader(new FileReader("lambdasinaction/chap3/data.txt"))) {
+		try (BufferedReader br = new BufferedReader(new FileReader("C:/Windows/System32/drivers/etc/hosts"))) {
 			return p.process(br);
 		}
 	}
